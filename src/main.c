@@ -75,8 +75,10 @@ void SysTick_Handler(void)
 {
     HAL_IncTick();
     HAL_SYSTICK_IRQHandler();
-
-    xPortSysTickHandler();
+    if (xTaskGetSchedulerState() != taskSCHEDULER_NOT_STARTED)
+    {
+        xPortSysTickHandler();
+    }
 }
 
 void NMI_Handler(void)
