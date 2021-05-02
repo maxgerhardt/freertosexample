@@ -1,0 +1,17 @@
+{
+    "name": "FreeRTOS",
+    "version": "10.2.1",
+    "keywords": "rtos, timing, thread, task, mutex, semaphore",
+    "description": "Real Time Operating System",
+    "frameworks": "stm32cube",
+    "platforms": "ststm32",
+    "build": {
+        "libArchive": false,
+		"flags": [
+			"-I Source\\portable\\GCC\\ARM_CMF4",
+			"-I Source/portable/MemMang",
+			"-I Source/include",
+            "-mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp"
+		]
+    }
+}
